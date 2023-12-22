@@ -1,2 +1,1 @@
-# LiYixuan727.github.io-myblog
-My Blog (hexo)
+# My Blog (hexo)
