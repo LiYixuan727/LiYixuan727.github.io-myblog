@@ -208,11 +208,8 @@
 <h3 id="更新表数据"><a href="#更新表数据" class="headerlink" title="更新表数据"></a>更新表数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 更新表中的数据</span></span><br><span class="line">c.execute(<span class="string">&quot;UPDATE todo_list SET list_item=&#x27;完成sqlite3教程&#x27; WHERE list_item=&#x27;完成python sqlite3教程&#x27;&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存更改</span></span><br><span class="line">conn.commit()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭连接</span></span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
 
 
-<hr>
-<hr>
+
 <h2 id="一些tricky的点"><a href="#一些tricky的点" class="headerlink" title="一些tricky的点:"></a>一些tricky的点:</h2><p>-[] 查询语句中的 ‘ 符号<br>-[] 批量操作</p>
-<hr>
-<hr>
 
         </div>
     
