@@ -6,28 +6,32 @@
   <link href="https://liyixuan727.github.io/atom.xml" rel="self"/>
   
   <link href="https://liyixuan727.github.io/"/>
-  <updated>2023-12-23T08:21:55.317Z</updated>
+  <updated>2023-12-23T23:45:25.401Z</updated>
   <id>https://liyixuan727.github.io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ai</title>
+    <title>用AI识别AI生成的文本</title>
     <link href="https://liyixuan727.github.io/2023/12/23/ai/"/>
     <id>https://liyixuan727.github.io/2023/12/23/ai/</id>
     <published>2023-12-23T08:21:55.000Z</published>
-    <updated>2023-12-23T08:21:55.317Z</updated>
+    <updated>2023-12-23T23:45:25.401Z</updated>
     
     
     
+    
+    <category term="Kaggle" scheme="https://liyixuan727.github.io/categories/Kaggle/"/>
+    
+    <category term="LLM" scheme="https://liyixuan727.github.io/categories/Kaggle/LLM/"/>
     
     
   </entry>
   
   <entry>
     <title>SQLite3数据库在Python中的使用指南</title>
-    <link href="https://liyixuan727.github.io/2023/12/23/p/"/>
-    <id>https://liyixuan727.github.io/2023/12/23/p/</id>
+    <link href="https://liyixuan727.github.io/2023/12/23/SQLite3/"/>
+    <id>https://liyixuan727.github.io/2023/12/23/SQLite3/</id>
     <published>2023-12-23T07:59:28.000Z</published>
     <updated>2023-12-23T22:23:19.061Z</updated>
     
