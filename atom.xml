@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>从1到99的自然语言处理</title>
   
-  
+  <subtitle>我的日志</subtitle>
   <link href="https://liyixuan727.github.io/atom.xml" rel="self"/>
   
   <link href="https://liyixuan727.github.io/"/>
