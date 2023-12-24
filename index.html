@@ -204,13 +204,27 @@
 
 <p><strong>参数解释:</strong></p>
 <ul>
-<li>必填项部分</li>
-</ul>
-<p>– -m | –model_path：模型路径<br>– -c | –config_path：配置文件路径<br>– -n | –clean_names：wav 文件名列表，放在 raw 文件夹下<br>– -t | –trans：音高调整，支持正负（半音）<br>– -s | –spk_list：合成目标说话人名称<br>– -cl | –clip：音频强制切片，默认0为自动切片，单位为秒&#x2F;s</p>
+<li><p>必填项部分</p>
 <ul>
-<li>可选项部分：部分具体见下一节</li>
+<li>-m | –model_path：模型路径</li>
+<li>-c | –config_path：配置文件路径</li>
+<li>-n | –clean_names：wav 文件名列表，放在 raw 文件夹下</li>
+<li>-t | –trans：音高调整，支持正负（半音）</li>
+<li>-s | –spk_list：合成目标说话人名称</li>
+<li>-cl | –clip：音频强制切片，默认0为自动切片，单位为秒&#x2F;s</li>
 </ul>
-<p>– -lg | –linear_gradient：两段音频切片的交叉淡入长度，如果强制切片后出现人声不连贯可调整该数值，如果连贯建议采用默认值0，单位为秒<br>– -fmp | –f0_mean_pooling：是否对F0使用均值滤波器(池化)，对部分哑音有改善。注意，启动该选项会导致推理速度下降，默认关闭<br>– -a | –auto_predict_f0：语音转换自动预测音高，转换歌声时不要打开这个会严重跑调<br>– -cm | –cluster_model_path：聚类模型路径，如果没有训练聚类则随便填<br>– -cr | –cluster_infer_ratio：聚类方案占比，范围0-1，若没有训练聚类模型则默认0即可<br>– -eh | –enhance：是否使用NSF_HIFIGAN增强器,该选项对部分训练集少的模型有一定的音质增强效果，但是对训练好的模型有反面效果，默认关闭</p>
+</li>
+<li><p>可选项部分：部分具体见下一节</p>
+<ul>
+<li>-lg | –linear_gradient：两段音频切片的交叉淡入长度，如果强制切片后出现人声不连贯可调整该数值，如果连贯建议采用默认值0，单位为秒</li>
+<li>-fmp | –f0_mean_pooling：是否对F0使用均值滤波器(池化)，对部分哑音有改善。注意，启动该选项会导致推理速度下降，默认关闭</li>
+<li>-a | –auto_predict_f0：语音转换自动预测音高，转换歌声时不要打开这个会严重跑调</li>
+<li>-cm | –cluster_model_path：聚类模型路径，如果没有训练聚类则随便填</li>
+<li>-cr | –cluster_infer_ratio：聚类方案占比，范围0-1，若没有训练聚类模型则默认0即可</li>
+<li>-eh | –enhance：是否使用NSF_HIFIGAN增强器,该选项对部分训练集少的模型有一定的音质增强效果，但是对训练好的模型有反面效果，默认关闭</li>
+</ul>
+</li>
+</ul>
 
         </div>
     
