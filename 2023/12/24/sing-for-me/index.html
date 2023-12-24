@@ -11,8 +11,8 @@
     <!--Description-->
     
         <meta name="description" content="先放个大名鼎鼎的 GitHub 原项目链接: https://github.com/justinjohn0306/so-vits-svc-4.0/blob/4.0/README_zh_CN.md
-第一步是挑选适合的训练音源!正式开始前, 首先一个好东西: spleeter 人声伴奏自动分离.
-分不同">
+一、第一步是挑选适合的训练音源!正式开始前, 首先一个好东西: spleeter 人声伴奏自动分离.
+分">
     
 
     <!--Author-->
@@ -170,7 +170,7 @@
 
         <!-- Post Content -->
         <p>先放个大名鼎鼎的 GitHub 原项目链接: <a target="_blank" rel="noopener" href="https://github.com/justinjohn0306/so-vits-svc-4.0/blob/4.0/README_zh_CN.md">https://github.com/justinjohn0306/so-vits-svc-4.0/blob/4.0/README_zh_CN.md</a></p>
-<h2 id="第一步是挑选适合的训练音源"><a href="#第一步是挑选适合的训练音源" class="headerlink" title="第一步是挑选适合的训练音源!"></a>第一步是挑选适合的训练音源!</h2><p>正式开始前, 首先一个好东西: <a target="_blank" rel="noopener" href="https://github.com/deezer/spleeter">spleeter</a> 人声伴奏自动分离.</p>
+<h2 id="一、第一步是挑选适合的训练音源"><a href="#一、第一步是挑选适合的训练音源" class="headerlink" title="一、第一步是挑选适合的训练音源!"></a>一、第一步是挑选适合的训练音源!</h2><p>正式开始前, 首先一个好东西: <a target="_blank" rel="noopener" href="https://github.com/deezer/spleeter">spleeter</a> 人声伴奏自动分离.</p>
 <p>分不同轨数:</p>
 <ul>
 <li>Vocals (singing voice) &#x2F; accompaniment separation (2 stems)</li>
@@ -183,7 +183,7 @@
 
 
 <p>用起来倒是很快, 也很便捷, 但出来的效果只能说一般, 人声part各处模糊不清 (换首歌不知道会不会好一点😠)</p>
-<h2 id="预处理原声音频"><a href="#预处理原声音频" class="headerlink" title="预处理原声音频"></a>预处理原声音频</h2><p><strong>以下都复制自原项目 ducumentation:</strong></p>
+<h2 id="二、预处理原声音频"><a href="#二、预处理原声音频" class="headerlink" title="二、预处理原声音频"></a>二、预处理原声音频</h2><p><strong>以下都复制自原项目 ducumentation:</strong></p>
 <h4 id="0-音频切片"><a href="#0-音频切片" class="headerlink" title="0. 音频切片"></a>0. 音频切片</h4><p>将音频切片至5s - 15s, 稍微长点也无伤大雅，实在太长可能会导致训练中途甚至预处理就爆显存。</p>
 <p>可以使用audio-slicer-GUI、audio-slicer-CLI</p>
 <p>一般情况下只需调整其中的Minimum Interval，普通陈述素材通常保持默认即可，歌唱素材可以调整至100甚至50</p>
@@ -202,7 +202,7 @@
 <li><p><code>all_in_mem</code>：加载所有数据集到内存中，某些平台的硬盘IO过于低下、同时内存容量 远大于 数据集体积时可以启用</p>
 </li>
 </ul>
-<h2 id="下载预训练的模型文件"><a href="#下载预训练的模型文件" class="headerlink" title="下载预训练的模型文件"></a>下载预训练的模型文件</h2><ul>
+<h2 id="三、下载预训练的模型文件"><a href="#三、下载预训练的模型文件" class="headerlink" title="三、下载预训练的模型文件"></a>三、下载预训练的模型文件</h2><ul>
 <li><h5 id="必选项"><a href="#必选项" class="headerlink" title="必选项 :"></a>必选项 :</h5></li>
 </ul>
 <p>contentvec ：<code>checkpoint_best_legacy_500.pt</code> 放在hubert目录下</p>
@@ -228,10 +228,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一键下载</span></span><br><span class="line"><span class="comment"># hubert</span></span><br><span class="line">wget -P hubert/ https://github.com/bshall/hubert/releases/download/v0.1/hubert-soft-0d54a1f4.pt</span><br><span class="line"><span class="comment"># G与D预训练模型</span></span><br><span class="line">wget -P logs/32k/ https://huggingface.co/innnky/sovits_pretrained/resolve/main/G_0.pth</span><br><span class="line">wget -P logs/32k/ https://huggingface.co/innnky/sovits_pretrained/resolve/main/D_0.pth</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python train.py -c configs/config.json -m 44k</span><br></pre></td></tr></table></figure>
+<h2 id="四、训练"><a href="#四、训练" class="headerlink" title="四、训练"></a>四、训练</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python train.py -c configs/config.json -m 44k</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python inference_main.py -m <span class="string">&quot;logs/44k/G_30400.pth&quot;</span> -c <span class="string">&quot;configs/config.json&quot;</span> -n <span class="string">&quot;君の知らない物語-src.wav&quot;</span> -t 0 -s <span class="string">&quot;nen&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="五、推理"><a href="#五、推理" class="headerlink" title="五、推理"></a>五、推理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python inference_main.py -m <span class="string">&quot;logs/44k/G_30400.pth&quot;</span> -c <span class="string">&quot;configs/config.json&quot;</span> -n <span class="string">&quot;君の知らない物語-src.wav&quot;</span> -t 0 -s <span class="string">&quot;nen&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>参数解释:</strong></p>
 <ul>
