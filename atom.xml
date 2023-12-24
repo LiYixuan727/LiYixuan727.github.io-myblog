@@ -6,10 +6,37 @@
   <link href="https://liyixuan727.github.io/atom.xml" rel="self"/>
   
   <link href="https://liyixuan727.github.io/"/>
-  <updated>2023-12-24T06:06:34.596Z</updated>
+  <updated>2023-12-24T16:30:57.675Z</updated>
   <id>https://liyixuan727.github.io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Algorithm: binary tree</title>
+    <link href="https://liyixuan727.github.io/2023/12/24/algo-binary-tree/"/>
+    <id>https://liyixuan727.github.io/2023/12/24/algo-binary-tree/</id>
+    <published>2023-12-24T15:54:17.000Z</published>
+    <updated>2023-12-24T16:30:57.675Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="a binary tree"></p><ul><li>preorder &#x3D; [3,9,20,15,7]</li><li>inorder &#x3D; [9,3,15,20,7]</li><li>postorder &#x3D; [9,15,7,20,3]</li></ul><p><a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150">🟠 LeetCode 105 - Construct Binary Tree from Preorder and Inorder Traversal</a><br><a href="https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150">🟠 LeetCode 106 - Construct Binary Tree from Inorder and Postorder Traversal</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://assets.leetcode.com/uploads/2021/02/19/tree.jpg&quot; alt=&quot;a binary tree&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;preorder &amp;#x3D; [3,9,20,15,7]&lt;/li&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="https://liyixuan727.github.io/categories/Algorithm/"/>
+    
+    <category term="LeetCode" scheme="https://liyixuan727.github.io/categories/Algorithm/LeetCode/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Guessing how much longer my game can still survive by data analysis</title>
