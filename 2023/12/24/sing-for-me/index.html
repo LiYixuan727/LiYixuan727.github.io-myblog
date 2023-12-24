@@ -10,11 +10,11 @@
 
     <!--Description-->
     
-        <meta name="description" content="预处理音频首先一个好东西: spleeter 人声伴奏自动分离.
+        <meta name="description" content="先放个 GitHub 项目链接: https://github.com/justinjohn0306/so-vits-svc-4.0/blob/4.0/README_zh_CN.md
+第一步是挑选适合的训练音源!正式开始前, 首先一个好东西: spleeter 人声伴奏自动分离.
 分不同轨数:
 
-Vocals (singing voice) &amp;#x2F; accompaniment separation (2 stems)
-Vocals &amp;#x2F; drums &amp;#x2F; bass &amp;#x2F; other">
+V">
     
 
     <!--Author-->
@@ -171,7 +171,8 @@ Vocals &amp;#x2F; drums &amp;#x2F; bass &amp;#x2F; other">
         
 
         <!-- Post Content -->
-        <h2 id="预处理音频"><a href="#预处理音频" class="headerlink" title="预处理音频"></a>预处理音频</h2><p>首先一个好东西: <a target="_blank" rel="noopener" href="https://github.com/deezer/spleeter">spleeter</a> 人声伴奏自动分离.</p>
+        <p>先放个 GitHub 项目链接: <a target="_blank" rel="noopener" href="https://github.com/justinjohn0306/so-vits-svc-4.0/blob/4.0/README_zh_CN.md">https://github.com/justinjohn0306/so-vits-svc-4.0/blob/4.0/README_zh_CN.md</a></p>
+<h2 id="第一步是挑选适合的训练音源"><a href="#第一步是挑选适合的训练音源" class="headerlink" title="第一步是挑选适合的训练音源!"></a>第一步是挑选适合的训练音源!</h2><p>正式开始前, 首先一个好东西: <a target="_blank" rel="noopener" href="https://github.com/deezer/spleeter">spleeter</a> 人声伴奏自动分离.</p>
 <p>分不同轨数:</p>
 <ul>
 <li>Vocals (singing voice) &#x2F; accompaniment separation (2 stems)</li>
@@ -184,6 +185,39 @@ Vocals &amp;#x2F; drums &amp;#x2F; bass &amp;#x2F; other">
 
 
 <p>用起来倒是很快, 也很便捷, 但出来的效果只能说一般, 人声part各处模糊不清 (换首歌不知道会不会好一点😠)</p>
+<h2 id="预处理原声音频"><a href="#预处理原声音频" class="headerlink" title="预处理原声音频"></a>预处理原声音频</h2><p>以下复制自原项目 ducumentation:</p>
+<h4 id="0-音频切片"><a href="#0-音频切片" class="headerlink" title="0. 音频切片"></a>0. 音频切片</h4><p>将音频切片至5s - 15s, 稍微长点也无伤大雅，实在太长可能会导致训练中途甚至预处理就爆显存。</p>
+<p>可以使用audio-slicer-GUI、audio-slicer-CLI</p>
+<p>一般情况下只需调整其中的Minimum Interval，普通陈述素材通常保持默认即可，歌唱素材可以调整至100甚至50</p>
+<p>切完之后手动删除过长过短的音频</p>
+<h4 id="1-重采样至44100Hz单声道"><a href="#1-重采样至44100Hz单声道" class="headerlink" title="1. 重采样至44100Hz单声道"></a>1. 重采样至44100Hz单声道</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python resample.py</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-自动划分训练集、验证集，以及自动生成配置文件"><a href="#2-自动划分训练集、验证集，以及自动生成配置文件" class="headerlink" title="2. 自动划分训练集、验证集，以及自动生成配置文件"></a>2. 自动划分训练集、验证集，以及自动生成配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python preprocess_flist_config.py</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-生成hubert与f0"><a href="#3-生成hubert与f0" class="headerlink" title="3. 生成hubert与f0"></a>3. 生成hubert与f0</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python preprocess_hubert_f0.py</span><br></pre></td></tr></table></figure>
+
+<p>执行完以上步骤后 dataset 目录便是预处理完成的数据，可以删除 dataset_raw 文件夹了</p>
+<p>此时可以在生成的config.json修改部分参数</p>
+<ul>
+<li><p><code>keep_ckpts</code>：训练时保留最后几个模型，0为保留所有，默认只保留最后3个</p>
+</li>
+<li><p><code>all_in_mem</code>：加载所有数据集到内存中，某些平台的硬盘IO过于低下、同时内存容量 远大于 数据集体积时可以启用</p>
+</li>
+</ul>
+<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python train.py -c configs/config.json -m 44k</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python inference_main.py -m <span class="string">&quot;logs/44k/G_30400.pth&quot;</span> -c <span class="string">&quot;configs/config.json&quot;</span> -n <span class="string">&quot;君の知らない物語-src.wav&quot;</span> -t 0 -s <span class="string">&quot;nen&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参数解释:</strong></p>
+<ul>
+<li>必填项部分</li>
+</ul>
+<p>– -m | –model_path：模型路径<br>– -c | –config_path：配置文件路径<br>– -n | –clean_names：wav 文件名列表，放在 raw 文件夹下<br>– -t | –trans：音高调整，支持正负（半音）<br>– -s | –spk_list：合成目标说话人名称<br>– -cl | –clip：音频强制切片，默认0为自动切片，单位为秒&#x2F;s</p>
+<ul>
+<li>可选项部分：部分具体见下一节</li>
+</ul>
+<p>– -lg | –linear_gradient：两段音频切片的交叉淡入长度，如果强制切片后出现人声不连贯可调整该数值，如果连贯建议采用默认值0，单位为秒<br>– -fmp | –f0_mean_pooling：是否对F0使用均值滤波器(池化)，对部分哑音有改善。注意，启动该选项会导致推理速度下降，默认关闭<br>– -a | –auto_predict_f0：语音转换自动预测音高，转换歌声时不要打开这个会严重跑调<br>– -cm | –cluster_model_path：聚类模型路径，如果没有训练聚类则随便填<br>– -cr | –cluster_infer_ratio：聚类方案占比，范围0-1，若没有训练聚类模型则默认0即可<br>– -eh | –enhance：是否使用NSF_HIFIGAN增强器,该选项对部分训练集少的模型有一定的音质增强效果，但是对训练好的模型有反面效果，默认关闭</p>
 
     </div>
 
