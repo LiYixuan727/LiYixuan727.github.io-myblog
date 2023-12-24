@@ -10,6 +10,12 @@
 
     <!--Description-->
     
+        <meta name="description" content="预处理音频首先一个好东西: spleeter 人声伴奏自动分离.
+分不同轨数:
+
+Vocals (singing voice) &amp;#x2F; accompaniment separation (2 stems)
+Vocals &amp;#x2F; drums &amp;#x2F; bass &amp;#x2F; other">
+    
 
     <!--Author-->
     
@@ -165,7 +171,20 @@
         
 
         <!-- Post Content -->
-        
+        <h2 id="预处理音频"><a href="#预处理音频" class="headerlink" title="预处理音频"></a>预处理音频</h2><p>首先一个好东西: <a target="_blank" rel="noopener" href="https://github.com/deezer/spleeter">spleeter</a> 人声伴奏自动分离.</p>
+<p>分不同轨数:</p>
+<ul>
+<li>Vocals (singing voice) &#x2F; accompaniment separation (2 stems)</li>
+<li>Vocals &#x2F; drums &#x2F; bass &#x2F; other separation (4 stems)</li>
+<li>Vocals &#x2F; drums &#x2F; bass &#x2F; piano &#x2F; other separation (5 stems)</li>
+</ul>
+<p>可以接受的格式包括 mp3, mp4 等等.</p>
+<h4 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install dependencies using conda</span></span><br><span class="line">conda install -c conda-forge ffmpeg libsndfile</span><br><span class="line"><span class="comment"># install spleeter with pip</span></span><br><span class="line">pip install spleeter</span><br><span class="line"><span class="comment"># download an example audio file (if you don&#x27;t have wget, use another tool for downloading)</span></span><br><span class="line">wget https://github.com/deezer/spleeter/raw/master/audio_example.mp3</span><br><span class="line"><span class="comment"># separate the example audio into two components</span></span><br><span class="line">spleeter separate -p spleeter:2stems -o output audio_example.mp3</span><br></pre></td></tr></table></figure>
+
+
+
+<p>用起来倒是很快, 也很便捷, 但出来的效果只能说一般, 人声part各处模糊不清 (换首歌不知道会不会好一点😠)</p>
+
     </div>
 
     
@@ -218,11 +237,11 @@ I’m a NLP PhD of Sorbonne Nouvelle University. I live in Paris and I finished 
         </li>
         
         <li>
-            <a class="footer-post" href="/myblog/categories/AI%E7%BF%BB%E5%94%B1/">AI翻唱</a>
+            <a class="footer-post" href="/myblog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Python/">Python</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/myblog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Python/">Python</a>
+            <a class="footer-post" href="/myblog/categories/Kaggle/LLM/">LLM</a>
         </li>
         
     </ul>
