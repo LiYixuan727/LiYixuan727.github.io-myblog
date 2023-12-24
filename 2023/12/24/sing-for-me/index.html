@@ -22,7 +22,7 @@ V">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="用 so-vits-svc-4.0 让 tcly 给我唱歌"/>
+        <meta property="og:title" content="用 so-vits-svc-4.0 让 tcly 给我唱首歌"/>
     
 
     <!--Open Graph Description-->
@@ -47,7 +47,7 @@ V">
 
     <!-- Title -->
     
-    <title>用 so-vits-svc-4.0 让 tcly 给我唱歌 - Natural Language Processing from 01 to 99</title>
+    <title>用 so-vits-svc-4.0 让 tcly 给我唱首歌 - Natural Language Processing from 01 to 99</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -149,7 +149,7 @@ V">
     <div class="post-header">
         <h1 class="title">
             <a href="/myblog/2023/12/24/sing-for-me/">
-                用 so-vits-svc-4.0 让 tcly 给我唱歌
+                用 so-vits-svc-4.0 让 tcly 给我唱首歌
             </a>
         </h1>
         <div class="post-info">
@@ -185,7 +185,7 @@ V">
 
 
 <p>用起来倒是很快, 也很便捷, 但出来的效果只能说一般, 人声part各处模糊不清 (换首歌不知道会不会好一点😠)</p>
-<h2 id="预处理原声音频"><a href="#预处理原声音频" class="headerlink" title="预处理原声音频"></a>预处理原声音频</h2><p>以下复制自原项目 ducumentation:</p>
+<h2 id="预处理原声音频"><a href="#预处理原声音频" class="headerlink" title="预处理原声音频"></a>预处理原声音频</h2><p><strong>以下都复制自原项目 ducumentation:</strong></p>
 <h4 id="0-音频切片"><a href="#0-音频切片" class="headerlink" title="0. 音频切片"></a>0. 音频切片</h4><p>将音频切片至5s - 15s, 稍微长点也无伤大雅，实在太长可能会导致训练中途甚至预处理就爆显存。</p>
 <p>可以使用audio-slicer-GUI、audio-slicer-CLI</p>
 <p>一般情况下只需调整其中的Minimum Interval，普通陈述素材通常保持默认即可，歌唱素材可以调整至100甚至50</p>
@@ -204,6 +204,21 @@ V">
 <li><p><code>all_in_mem</code>：加载所有数据集到内存中，某些平台的硬盘IO过于低下、同时内存容量 远大于 数据集体积时可以启用</p>
 </li>
 </ul>
+<h2 id="下载预训练的模型文件"><a href="#下载预训练的模型文件" class="headerlink" title="下载预训练的模型文件"></a>下载预训练的模型文件</h2><h4 id="必选项"><a href="#必选项" class="headerlink" title="- 必选项:"></a>- 必选项:</h4><p>contentvec ：<code>checkpoint_best_legacy_500.pt</code> 放在hubert目录下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># contentvec</span><br><span class="line">http://obs.cstcloud.cn/share/obs/sankagenkeshi/checkpoint_best_legacy_500.pt</span><br><span class="line"></span><br><span class="line"># 也可手动下载放在hubert目录</span><br></pre></td></tr></table></figure>
+
+<h4 id="可选项-强烈推荐"><a href="#可选项-强烈推荐" class="headerlink" title="- 可选项: (强烈推荐)"></a>- 可选项: (强烈推荐)</h4><p>自己预训练底模文件：<code>G_0.pth</code> <code>D_0.pth</code> 放在logs&#x2F;44k目录下</p>
+<ul>
+<li>预训练底模为必选项，因为据测试从零开始训练有概率不收敛，同时底模也能加快训练速度</li>
+<li>预训练底模训练数据集包含云灏 即霜 辉宇·星AI 派蒙 绫地宁宁，覆盖男女生常见音域，可以认为是相对通用的底模</li>
+<li>底模删除了optimizer speaker_embedding 等无关权重, 只可以用于初始化训练，无法用于推理</li>
+<li>该底模和48khz底模通用</li>
+</ul>
+<h4 id="可选项"><a href="#可选项" class="headerlink" title="- 可选项:"></a>- 可选项:</h4><p>soft vc hubert：<code>hubert-soft-0d54a1f4.pt</code> 放在hubert目录下</p>
+<p><strong>这3个文件也可以手动通过JupyterLab上传到对应位置</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一键下载</span></span><br><span class="line"><span class="comment"># hubert</span></span><br><span class="line">wget -P hubert/ https://github.com/bshall/hubert/releases/download/v0.1/hubert-soft-0d54a1f4.pt</span><br><span class="line"><span class="comment"># G与D预训练模型</span></span><br><span class="line">wget -P logs/32k/ https://huggingface.co/innnky/sovits_pretrained/resolve/main/G_0.pth</span><br><span class="line">wget -P logs/32k/ https://huggingface.co/innnky/sovits_pretrained/resolve/main/D_0.pth</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python train.py -c configs/config.json -m 44k</span><br></pre></td></tr></table></figure>
 
 
@@ -281,11 +296,11 @@ I’m a NLP PhD of Sorbonne Nouvelle University. I live in Paris and I finished 
         </li>
         
         <li>
-            <a class="footer-post" href="/myblog/categories/AI%E7%BF%BB%E5%94%B1/">AI翻唱</a>
+            <a class="footer-post" href="/myblog/categories/Kaggle/">Kaggle</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/myblog/categories/Kaggle/">Kaggle</a>
+            <a class="footer-post" href="/myblog/categories/AI%E7%BF%BB%E5%94%B1/">AI翻唱</a>
         </li>
         
         <li>
