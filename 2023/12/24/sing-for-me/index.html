@@ -204,17 +204,19 @@ V">
 <li><p><code>all_in_mem</code>：加载所有数据集到内存中，某些平台的硬盘IO过于低下、同时内存容量 远大于 数据集体积时可以启用</p>
 </li>
 </ul>
-<h2 id="下载预训练的模型文件"><a href="#下载预训练的模型文件" class="headerlink" title="下载预训练的模型文件"></a>下载预训练的模型文件</h2><h4 id="必选项"><a href="#必选项" class="headerlink" title="- 必选项:"></a>- 必选项:</h4><p>contentvec ：<code>checkpoint_best_legacy_500.pt</code> 放在hubert目录下</p>
+<h2 id="下载预训练的模型文件"><a href="#下载预训练的模型文件" class="headerlink" title="下载预训练的模型文件"></a>下载预训练的模型文件</h2><h5 id="必选项"><a href="#必选项" class="headerlink" title="- 必选项:"></a>- 必选项:</h5><p>contentvec ：<code>checkpoint_best_legacy_500.pt</code> 放在hubert目录下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># contentvec</span><br><span class="line">http://obs.cstcloud.cn/share/obs/sankagenkeshi/checkpoint_best_legacy_500.pt</span><br><span class="line"></span><br><span class="line"># 也可手动下载放在hubert目录</span><br></pre></td></tr></table></figure>
 
-<h4 id="可选项-强烈推荐"><a href="#可选项-强烈推荐" class="headerlink" title="- 可选项: (强烈推荐)"></a>- 可选项: (强烈推荐)</h4><p>自己预训练底模文件：<code>G_0.pth</code> <code>D_0.pth</code> 放在logs&#x2F;44k目录下</p>
+<h5 id="可选项-强烈推荐"><a href="#可选项-强烈推荐" class="headerlink" title="- 可选项: (强烈推荐)"></a>- 可选项: (强烈推荐)</h5><p>自己预训练底模文件：<code>G_0.pth</code> <code>D_0.pth</code> 放在logs&#x2F;44k目录下</p>
 <ul>
 <li>预训练底模为必选项，因为据测试从零开始训练有概率不收敛，同时底模也能加快训练速度</li>
 <li>预训练底模训练数据集包含云灏 即霜 辉宇·星AI 派蒙 绫地宁宁，覆盖男女生常见音域，可以认为是相对通用的底模</li>
 <li>底模删除了optimizer speaker_embedding 等无关权重, 只可以用于初始化训练，无法用于推理</li>
 <li>该底模和48khz底模通用</li>
 </ul>
-<h4 id="可选项"><a href="#可选项" class="headerlink" title="- 可选项:"></a>- 可选项:</h4><p>soft vc hubert：<code>hubert-soft-0d54a1f4.pt</code> 放在hubert目录下</p>
+<h5 id="可选项"><a href="#可选项" class="headerlink" title="- 可选项:"></a>- 可选项:</h5><p>soft vc hubert：<code>hubert-soft-0d54a1f4.pt</code> 放在hubert目录下</p>
+<br/>
+
 <p><strong>这3个文件也可以手动通过JupyterLab上传到对应位置</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一键下载</span></span><br><span class="line"><span class="comment"># hubert</span></span><br><span class="line">wget -P hubert/ https://github.com/bshall/hubert/releases/download/v0.1/hubert-soft-0d54a1f4.pt</span><br><span class="line"><span class="comment"># G与D预训练模型</span></span><br><span class="line">wget -P logs/32k/ https://huggingface.co/innnky/sovits_pretrained/resolve/main/G_0.pth</span><br><span class="line">wget -P logs/32k/ https://huggingface.co/innnky/sovits_pretrained/resolve/main/D_0.pth</span><br></pre></td></tr></table></figure>
 
