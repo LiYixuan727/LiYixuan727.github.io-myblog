@@ -307,6 +307,7 @@ so-vits-svc-4.0
 </ul>
 </li>
 </ul>
+<h3 id="Web-UI"><a href="#Web-UI" class="headerlink" title="Web UI"></a>Web UI</h3><p>运行 <code>python webUI.py</code> 进入网页界面版.</p>
 <h1 id="内存不足问题"><a href="#内存不足问题" class="headerlink" title="内存不足问题"></a>内存不足问题</h1><p>因为计算量很大, 需要在GPU环境运行.</p>
 <p>这里首先是选择了在 Google Colab 提供的显卡上运行.</p>
 <p>在 Colab Pro 的 plan 中提供以下硬件加速器:</p>
@@ -334,13 +335,22 @@ so-vits-svc-4.0
 <h1 id="其他一些代替方案"><a href="#其他一些代替方案" class="headerlink" title="其他一些代替方案"></a>其他一些代替方案</h1><h2 id="VITS-fast-fine-tuning"><a href="#VITS-fast-fine-tuning" class="headerlink" title="VITS-fast-fine-tuning"></a>VITS-fast-fine-tuning</h2><blockquote>
 <p>官方文档: <a target="_blank" rel="noopener" href="https://github.com/Plachtaa/VITS-fast-fine-tuning/blob/main/README_ZH.md">https://github.com/Plachtaa/VITS-fast-fine-tuning/blob/main/README_ZH.md</a></p>
 </blockquote>
-<p>相比 so-vits-svc-4.0 的优势是可以接受不同的训练音源文件, 包括:</p>
+<p>相比 so-vits-svc-4.0 的一个优势是可以接受不同的训练音源文件, 包括:</p>
 <ul>
-<li>short audio (so-vits-svc-4.0 唯一接受的数据)</li>
-<li>long audio</li>
-<li>video</li>
+<li><strong>so-vits-svc-4.0 唯一接受的训练数据</strong><ul>
+<li>Short audio (5s至15s的音频切片)</li>
+</ul>
+</li>
+<li>其他类型<ul>
+<li>Long audio（单个不应长于20分钟）</li>
+<li>Video（单个不应长于20分钟）</li>
+<li>Video link（单个不应长于20分钟）</li>
+</ul>
+</li>
 </ul>
 <p>🟧 <a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1fCMcU7b0CubdQcoA586Sq85QGwC7dvt8?usp=sharing">我的Colab笔记本</a></p>
+<p>在微调完成后，可以在线尝试效果。<br>运行后会输出一个public URL, 点击进入网页版UI以使用模型.</p>
+<p> <code>python VC_inference.py --model_dir ./OUTPUT_MODEL/G_latest.pth --share True</code></p>
 <h2 id="DDSP-SVC"><a href="#DDSP-SVC" class="headerlink" title="DDSP-SVC"></a>DDSP-SVC</h2><blockquote>
 <p>官方文档: <a target="_blank" rel="noopener" href="https://github.com/yxlllc/DDSP-SVC/blob/master/cn_README.md">https://github.com/yxlllc/DDSP-SVC/blob/master/cn_README.md</a></p>
 </blockquote>
@@ -396,15 +406,15 @@ I’m a NLP PhD of Sorbonne Nouvelle University. I live in Paris and I finished 
         </li>
         
         <li>
-            <a class="footer-post" href="/my_tech_blog/categories/Kaggle/">Kaggle</a>
-        </li>
-        
-        <li>
             <a class="footer-post" href="/my_tech_blog/categories/Algorithm/">Algorithm</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/my_tech_blog/categories/Data-Analysis/">Data Analysis</a>
+            <a class="footer-post" href="/my_tech_blog/categories/Kaggle/">Kaggle</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/my_tech_blog/categories/Database/Python/">Python</a>
         </li>
         
     </ul>
