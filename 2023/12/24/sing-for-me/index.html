@@ -309,7 +309,7 @@ so-vits-svc-4.0
 </ul>
 <h1 id="内存不足问题"><a href="#内存不足问题" class="headerlink" title="内存不足问题"></a>内存不足问题</h1><p>因为计算量很大, 需要在GPU环境运行.</p>
 <p>这里首先是选择了在 Google Colab Pro 提供的显卡上运行.</p>
-<p><a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1WZ6dtFqxA7C7CNkWLHoYTgM5JRXoc3G9?usp=sharing">我的Colab笔记本</a></p>
+<p>🟧 <a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1WZ6dtFqxA7C7CNkWLHoYTgM5JRXoc3G9?usp=sharing">我的Colab笔记本</a></p>
 <h2 id="用Google-Colab训练"><a href="#用Google-Colab训练" class="headerlink" title="用Google Colab训练"></a>用Google Colab训练</h2><blockquote>
 <p>参考文献:</p>
 <ul>
@@ -317,7 +317,7 @@ so-vits-svc-4.0
 </ul>
 </blockquote>
 <p>但无奈推理时依旧出现内存不足的问题:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">OutOfMemoryError: CUDA out of memory. Tried to allocate <span class="number">13.50</span> GiB. \</span><br><span class="line">GPU <span class="number">0</span> has a total capacty of <span class="number">15.77</span> GiB of which <span class="number">2.59</span> GiB <span class="keyword">is</span> free. \</span><br><span class="line">Process <span class="number">16231</span> has <span class="number">13.18</span> GiB memory <span class="keyword">in</span> use. \</span><br><span class="line">Of the allocated memory <span class="number">10.90</span> GiB <span class="keyword">is</span> allocated by PyTorch, <span class="keyword">and</span> <span class="number">1.90</span> GiB <span class="keyword">is</span> reserved by PyTorch but unallocated. \</span><br><span class="line">If reserved but unallocated memory <span class="keyword">is</span> large <span class="keyword">try</span> setting max_split_size_mb to avoid fragmentation.  \</span><br><span class="line">See documentation <span class="keyword">for</span> Memory Management <span class="keyword">and</span> PYTORCH_CUDA_ALLOC_CONF</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">OutOfMemoryError: CUDA out of memory. Tried to allocate <span class="number">13.50</span> GiB. </span><br><span class="line">GPU <span class="number">0</span> has a total capacty of <span class="number">15.77</span> GiB of which <span class="number">2.59</span> GiB <span class="keyword">is</span> free. </span><br><span class="line">Process <span class="number">16231</span> has <span class="number">13.18</span> GiB memory <span class="keyword">in</span> use. </span><br><span class="line">Of the allocated memory <span class="number">10.90</span> GiB <span class="keyword">is</span> allocated by PyTorch, <span class="keyword">and</span> <span class="number">1.90</span> GiB <span class="keyword">is</span> reserved by PyTorch but unallocated. </span><br><span class="line">If reserved but unallocated memory <span class="keyword">is</span> large <span class="keyword">try</span> setting max_split_size_mb to avoid fragmentation.  </span><br><span class="line">See documentation <span class="keyword">for</span> Memory Management <span class="keyword">and</span> PYTORCH_CUDA_ALLOC_CONF</span><br></pre></td></tr></table></figure>
 
 
 <h1 id="其他一些代替方案"><a href="#其他一些代替方案" class="headerlink" title="其他一些代替方案"></a>其他一些代替方案</h1><h2 id="VITS-fast-fine-tuning"><a href="#VITS-fast-fine-tuning" class="headerlink" title="VITS-fast-fine-tuning"></a>VITS-fast-fine-tuning</h2><blockquote>
@@ -329,7 +329,7 @@ so-vits-svc-4.0
 <li>long audio</li>
 <li>video</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1fCMcU7b0CubdQcoA586Sq85QGwC7dvt8?usp=sharing">我的Colab笔记本</a></p>
+<p>🟧 <a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1fCMcU7b0CubdQcoA586Sq85QGwC7dvt8?usp=sharing">我的Colab笔记本</a></p>
 <h2 id="DDSP-SVC"><a href="#DDSP-SVC" class="headerlink" title="DDSP-SVC"></a>DDSP-SVC</h2><blockquote>
 <p>官方文档: <a target="_blank" rel="noopener" href="https://github.com/yxlllc/DDSP-SVC/blob/master/cn_README.md">https://github.com/yxlllc/DDSP-SVC/blob/master/cn_README.md</a></p>
 </blockquote>
