@@ -10,8 +10,24 @@
 
     <!--Description-->
     
-        <meta name="description" content="SQLite 是一个轻量级的关系型数据库管理系统，可以在本地存储数据，并且不需要安装额外的服务器。在 Python 中，我们可以使用 sqlite3 模块来访问 SQLite 数据库。
-在本指南中，我们例举了如何使用 Python 中的 sqlite3 模块来创建、查询、更新和删除 SQLite 数据库中的表和数据。">
+        <meta name="description" content="📚 Data Structure and Algorithms Guidebook: 链表
+
+
+单链表（Linked List），即用一组地址任意的存储单元存放线性表中的数据元素。
+
+链表中的数据是以结点来表示的，每个结点的构成：元素（数据元素的映象）+指针（指示后继元素存储位置），元素就是存储数据的存储单元，指针就是连接每个结点的地址数据。
+
+静态链表（Static Linked List），即用数组描述的链表。
+
+使用静态链表存储数据，数据全部存储在数组中（和顺序表一样），但存储位置是随机的，数据之间「一对一」的逻辑关系通过一个整形变量（称为「游标」，和指针功能类似）维持（和链表类似）。
+
+循环链表（Circular Linked List），将单链表中终端结点的指针端由空指针改为指向头结点，就使整个单链表形成一个环，这种头尾相接的单链表称为单循环链表。
+
+循环链表解决了一个很麻烦的问题。如何从当中一个结点触发，访问到链表的全部结点。
+
+双向链表又称双链表（Double Linked List），它的每个数据结点中都有两个指针，分别指向直接后继和直接前驱。
+
+从双向链表中的任意一个结点开始，都可以很方便地访问它的前驱结点和后继结点。所以，一般我们都构造双向循环链表。">
     
 
     <!--Author-->
@@ -19,7 +35,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="SQLite3数据库在Python中的使用指南"/>
+        <meta property="og:title" content="Algorithm: 链表 (linked list)"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +60,7 @@
 
     <!-- Title -->
     
-    <title>SQLite3数据库在Python中的使用指南 - Natural Language Processing from 01 to 99</title>
+    <title>Algorithm: 链表 (linked list) - Natural Language Processing from 01 to 99</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -145,18 +161,18 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/my_tech_blog/2023/12/23/SQLite3/">
-                SQLite3数据库在Python中的使用指南
+            <a href="/my_tech_blog/2023/12/26/algo-linked-list/">
+                Algorithm: 链表 (linked list)
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2023-12-23</span>
+                <span class="date">2023-12-26</span>
             
             
             
                 <span class="category">
-                    <a href="/my_tech_blog/categories/Database/">Database</a>
+                    <a href="/my_tech_blog/categories/Algorithm/">Algorithm</a>
                 </span>
             
         </div>
@@ -168,41 +184,40 @@
         
 
         <!-- Post Content -->
-        <p>SQLite 是一个轻量级的关系型数据库管理系统，可以在本地存储数据，并且不需要安装额外的服务器。在 Python 中，我们可以使用 sqlite3 模块来访问 SQLite 数据库。</p>
-<p>在本指南中，我们例举了如何使用 Python 中的 sqlite3 模块来创建、查询、更新和删除 SQLite 数据库中的表和数据。</p>
+        <blockquote>
+<p><a target="_blank" rel="noopener" href="https://tsejx.github.io/data-structure-and-algorithms-guidebook/data-structure/linear-list/linear-list">📚 Data Structure and Algorithms Guidebook: 链表</a></p>
+</blockquote>
+<ul>
+<li>单链表（Linked List），即用一组地址任意的存储单元存放线性表中的数据元素。</li>
+</ul>
+<p>链表中的数据是以结点来表示的，每个结点的构成：元素（数据元素的映象）+指针（指示后继元素存储位置），元素就是存储数据的存储单元，指针就是连接每个结点的地址数据。</p>
+<ul>
+<li>静态链表（Static Linked List），即用数组描述的链表。</li>
+</ul>
+<p>使用静态链表存储数据，数据全部存储在数组中（和顺序表一样），但存储位置是随机的，数据之间「一对一」的逻辑关系通过一个整形变量（称为「游标」，和指针功能类似）维持（和链表类似）。</p>
+<ul>
+<li>循环链表（Circular Linked List），将单链表中终端结点的指针端由空指针改为指向头结点，就使整个单链表形成一个环，这种头尾相接的单链表称为单循环链表。</li>
+</ul>
+<p>循环链表解决了一个很麻烦的问题。如何从当中一个结点触发，访问到链表的全部结点。</p>
+<ul>
+<li>双向链表又称双链表（Double Linked List），它的每个数据结点中都有两个指针，分别指向直接后继和直接前驱。</li>
+</ul>
+<p>从双向链表中的任意一个结点开始，都可以很方便地访问它的前驱结点和后继结点。所以，一般我们都构造双向循环链表。</p>
 <span id="more"></span>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 创建表</span></span><br><span class="line">c.execute(<span class="string">&#x27;&#x27;&#x27;CREATE TABLE todo_list</span></span><br><span class="line"><span class="string">             (list_item text)&#x27;&#x27;&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存更改</span></span><br><span class="line">conn.commit()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭连接</span></span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+<h4 id="Definition-for-linked-list"><a href="#Definition-for-linked-list" class="headerlink" title="Definition for linked list."></a>Definition for linked list.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">ListNode</span><span class="params">(val)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.val = val;</span><br><span class="line">  <span class="keyword">this</span>.next = null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>如果表已经存在，使用 CREATE TABLE 语句会导致错误。为了避免这种情况，我们可以在 CREATE TABLE 语句中使用 IF NOT EXISTS 子句。下面是一个示例代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 创建表</span></span><br><span class="line">c.execute(<span class="string">&#x27;&#x27;&#x27;CREATE TABLE IF NOT EXISTS todo_list</span></span><br><span class="line"><span class="string">             (list_item text)&#x27;&#x27;&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存更改</span></span><br><span class="line">conn.commit()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭连接</span></span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-
-<h3 id="查询表"><a href="#查询表" class="headerlink" title="查询表"></a>查询表</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 查询表</span></span><br><span class="line">c.execute(<span class="string">&#x27;SELECT * FROM todo_list&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 获取查询结果</span></span><br><span class="line">result = c.fetchall()</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭连接</span></span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除表数据"><a href="#删除表数据" class="headerlink" title="删除表数据"></a>删除表数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 删除表中的所有数据</span></span><br><span class="line">c.execute(<span class="string">&#x27;DELETE FROM todo_list&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存更改</span></span><br><span class="line">conn.commit()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭连接</span></span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-
-<h3 id="新增表数据"><a href="#新增表数据" class="headerlink" title="新增表数据"></a>新增表数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 向表中添加数据</span></span><br><span class="line">c.execute(<span class="string">&quot;INSERT INTO todo_list values (&#x27;完成python sqlite3教程&#x27;)&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存更改</span></span><br><span class="line">conn.commit()</span><br><span class="line"> </span><br><span class="line"><span class="comment">#关闭链接</span></span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新表数据"><a href="#更新表数据" class="headerlink" title="更新表数据"></a>更新表数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;example.db&#x27;</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 更新表中的数据</span></span><br><span class="line">c.execute(<span class="string">&quot;UPDATE todo_list SET list_item=&#x27;完成sqlite3教程&#x27; WHERE list_item=&#x27;完成python sqlite3教程&#x27;&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存更改</span></span><br><span class="line">conn.commit()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭连接</span></span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+<h4 id="Definition-for-doubly-linked-list"><a href="#Definition-for-doubly-linked-list" class="headerlink" title="Definition for doubly-linked list."></a>Definition for doubly-linked list.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DoublyListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    DoublyListNode next, prev;</span><br><span class="line">    <span class="built_in">DoublyListNode</span>(<span class="type">int</span> x) &#123;val = x;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="一些tricky的点"><a href="#一些tricky的点" class="headerlink" title="一些tricky的点"></a>一些tricky的点</h2><ul>
-<li>查询语句中的 ‘ 符号</li>
-<li>批量操作</li>
-</ul>
+
 
     </div>
 
     
 
-    
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/my_tech_blog/tags/SQLite3/">#SQLite3</a>
-        </div>
     
 
     <!-- Comments -->
