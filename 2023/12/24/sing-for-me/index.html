@@ -132,12 +132,6 @@ so-vits-svc-4.0
             </li>
             
             <li class="menu-item">
-                <a href="/my_tech_blog/series">
-                    Series
-                </a>
-            </li>
-            
-            <li class="menu-item">
                 <a href="https://liyixuan727.github.io">
                     About
                 </a>
@@ -236,7 +230,7 @@ so-vits-svc-4.0
 <p>用起来倒是很快, 也很便捷, 但出来的效果只能说一般, 人声part各处模糊不清 (换首歌不知道会不会好一点😠)</p>
 <h3 id="二、预处理原声音频"><a href="#二、预处理原声音频" class="headerlink" title="二、预处理原声音频"></a>二、预处理原声音频</h3><p><strong>以下都复制自原项目 ducumentation:</strong></p>
 <h4 id="0-音频切片"><a href="#0-音频切片" class="headerlink" title="0. 音频切片"></a>0. 音频切片</h4><p>将音频切片至5s - 15s, 稍微长点也无伤大雅，实在太长可能会导致训练中途甚至预处理就爆显存。</p>
-<p>可以使用audio-slicer-GUI、audio-slicer-CLI</p>
+<p>可以使用<code>audio-slicer-GUI</code>、<code>audio-slicer-CLI</code></p>
 <p>一般情况下只需调整其中的Minimum Interval，普通陈述素材通常保持默认即可，歌唱素材可以调整至100甚至50</p>
 <p>切完之后手动删除过长过短的音频</p>
 <h4 id="1-重采样至44100Hz单声道"><a href="#1-重采样至44100Hz单声道" class="headerlink" title="1. 重采样至44100Hz单声道"></a>1. 重采样至44100Hz单声道</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python resample.py</span><br></pre></td></tr></table></figure>
@@ -341,10 +335,10 @@ so-vits-svc-4.0
 <li>Short audio (5s至15s的音频切片)</li>
 </ul>
 </li>
-<li>其他类型<ul>
-<li>Long audio（单个不应长于20分钟）</li>
-<li>Video（单个不应长于20分钟）</li>
-<li>Video link（单个不应长于20分钟）</li>
+<li>其他类型（单个不应长于20分钟）<ul>
+<li>Long audio</li>
+<li>Video</li>
+<li>Video link</li>
 </ul>
 </li>
 </ul>
@@ -365,7 +359,7 @@ so-vits-svc-4.0
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/my_tech_blog/tags/so-vits-svc-4-0/">#so-vits-svc-4.0</a> <a href="/my_tech_blog/tags/spleeter/">#spleeter</a>
+            <a href="/my_tech_blog/tags/so-vits-svc-4-0/">#so-vits-svc-4.0</a> <a href="/my_tech_blog/tags/VITS-fast-fine-tuning/">#VITS-fast-fine-tuning</a> <a href="/my_tech_blog/tags/DDSP-SVC/">#DDSP-SVC</a> <a href="/my_tech_blog/tags/so-vits-svc-fork/">#so-vits-svc-fork</a> <a href="/my_tech_blog/tags/spleeter/">#spleeter</a>
         </div>
     
 
@@ -406,15 +400,15 @@ I’m a NLP PhD of Sorbonne Nouvelle University. I live in Paris and I finished 
         </li>
         
         <li>
-            <a class="footer-post" href="/my_tech_blog/categories/Algorithm/">Algorithm</a>
-        </li>
-        
-        <li>
             <a class="footer-post" href="/my_tech_blog/categories/Kaggle/">Kaggle</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/my_tech_blog/categories/Database/Python/">Python</a>
+            <a class="footer-post" href="/my_tech_blog/categories/Algorithm/">Algorithm</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/my_tech_blog/categories/Data-Analysis/">Data Analysis</a>
         </li>
         
     </ul>
