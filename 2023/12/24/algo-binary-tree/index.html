@@ -10,13 +10,14 @@
 
     <!--Description-->
     
-        <meta name="description" content="preorder &amp;amp; inorder &amp;amp; postorder
+        <meta name="description" content="📚 Data Structure and Algorithms Guidebook: 二叉树
 
-preorder &amp;#x3D; [3,9,20,15,7]
-inorder &amp;#x3D; [9,3,15,20,7]
-postorder &amp;#x3D; [9,15,7,20,3]
+二叉树（Binary tree）是每个节点最多只有两个分支（即不存在分支度大于 2 的节点）的树结构。通常分支被称作 左子树 或 右子树。二叉树的分支具有左右次序，不能随意颠倒。
+树和二叉树的三个主要差别：
 
-🟠 LeetCode 105 - C">
+树的节点个数至少为 1，而二叉树的节点个数可以为 0
+树中的最大度数（节点数量）没有限制，而二叉树的节点的最大度数为 2
+树的节点没有左右之分，而二叉树的节点有左右之分">
     
 
     <!--Author-->
@@ -24,7 +25,7 @@ postorder &amp;#x3D; [9,15,7,20,3]
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Algorithm: binary tree"/>
+        <meta property="og:title" content="Algorithm: 二叉树 (binary tree)"/>
     
 
     <!--Open Graph Description-->
@@ -49,7 +50,7 @@ postorder &amp;#x3D; [9,15,7,20,3]
 
     <!-- Title -->
     
-    <title>Algorithm: binary tree - Natural Language Processing from 01 to 99</title>
+    <title>Algorithm: 二叉树 (binary tree) - Natural Language Processing from 01 to 99</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -151,7 +152,7 @@ postorder &amp;#x3D; [9,15,7,20,3]
     <div class="post-header">
         <h1 class="title">
             <a href="/my_tech_blog/2023/12/24/algo-binary-tree/">
-                Algorithm: binary tree
+                Algorithm: 二叉树 (binary tree)
             </a>
         </h1>
         <div class="post-info">
@@ -173,7 +174,25 @@ postorder &amp;#x3D; [9,15,7,20,3]
         
 
         <!-- Post Content -->
-        <h3 id="preorder-inorder-postorder"><a href="#preorder-inorder-postorder" class="headerlink" title="preorder &amp; inorder &amp; postorder"></a>preorder &amp; inorder &amp; postorder</h3><p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="a binary tree"></p>
+        <blockquote>
+<p><a target="_blank" rel="noopener" href="https://tsejx.github.io/data-structure-and-algorithms-guidebook/data-structure/tree/binary-tree">📚 Data Structure and Algorithms Guidebook: 二叉树</a></p>
+</blockquote>
+<p>二叉树（Binary tree）是每个节点最多只有两个分支（即不存在分支度大于 2 的节点）的树结构。通常分支被称作 左子树 或 右子树。二叉树的分支具有左右次序，不能随意颠倒。</p>
+<p>树和二叉树的三个主要差别：</p>
+<ul>
+<li>树的节点个数至少为 1，而二叉树的节点个数可以为 0</li>
+<li>树中的最大度数（节点数量）没有限制，而二叉树的节点的最大度数为 2</li>
+<li>树的节点没有左右之分，而二叉树的节点有左右之分</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="二叉树的类型"><a href="#二叉树的类型" class="headerlink" title="二叉树的类型"></a>二叉树的类型</h2><h4 id="满二叉树（Full-Binary-Tree）"><a href="#满二叉树（Full-Binary-Tree）" class="headerlink" title="- 满二叉树（Full Binary Tree）"></a>- 满二叉树（Full Binary Tree）</h4><h4 id="完全二叉树（Complete-Binary-Tree）"><a href="#完全二叉树（Complete-Binary-Tree）" class="headerlink" title="- 完全二叉树（Complete Binary Tree）"></a>- 完全二叉树（Complete Binary Tree）</h4><h4 id="堆（Heap）"><a href="#堆（Heap）" class="headerlink" title="- 堆（Heap）"></a>- 堆（Heap）</h4><h4 id="二叉搜索树（Binary-Search-Tree），也称为二叉查找树、有序二叉树（Ordered-Binary-Tree）或排序二叉树（Sorted-Binary-Tree），是指一棵空树或者具有下列性质的二叉树："><a href="#二叉搜索树（Binary-Search-Tree），也称为二叉查找树、有序二叉树（Ordered-Binary-Tree）或排序二叉树（Sorted-Binary-Tree），是指一棵空树或者具有下列性质的二叉树：" class="headerlink" title="- 二叉搜索树（Binary Search Tree），也称为二叉查找树、有序二叉树（Ordered Binary Tree）或排序二叉树（Sorted Binary Tree），是指一棵空树或者具有下列性质的二叉树："></a>- 二叉搜索树（Binary Search Tree），也称为二叉查找树、有序二叉树（Ordered Binary Tree）或排序二叉树（Sorted Binary Tree），是指一棵空树或者具有下列性质的二叉树：</h4><pre><code>- 若任意节点的 左子树 不为空，则左子树上所有节点的值 均小于 它的根节点的值
+- 若任意节点的 右子树 不为空，则右子树上所有节点的值 均大于或等于 它的根节点的值
+- 任意节点的左、右子树也分别为二叉搜索树
+- 没有键值相等的节点
+![](https://tsejx.github.io/data-structure-and-algorithms-guidebook/static/binary-search-tree.5d170107.png)
+</code></pre>
+<h4 id="平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于-1-的二叉树"><a href="#平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于-1-的二叉树" class="headerlink" title="- 平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于 1 的二叉树"></a>- 平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于 1 的二叉树</h4><h4 id="AVL-树"><a href="#AVL-树" class="headerlink" title="- AVL 树"></a>- AVL 树</h4><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="- 红黑树"></a>- 红黑树</h4><h3 id="preorder-inorder-postorder"><a href="#preorder-inorder-postorder" class="headerlink" title="preorder &amp; inorder &amp; postorder"></a>preorder &amp; inorder &amp; postorder</h3><p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="a binary tree"></p>
 <ul>
 <li>preorder &#x3D; [3,9,20,15,7]</li>
 <li>inorder &#x3D; [9,3,15,20,7]</li>
@@ -228,15 +247,15 @@ I’m a NLP PhD of Sorbonne Nouvelle University. I live in Paris and I finished 
         </li>
         
         <li>
+            <a class="footer-post" href="/my_tech_blog/categories/Kaggle/">Kaggle</a>
+        </li>
+        
+        <li>
             <a class="footer-post" href="/my_tech_blog/categories/Algorithm/">Algorithm</a>
         </li>
         
         <li>
             <a class="footer-post" href="/my_tech_blog/categories/Data-Analysis/">Data Analysis</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/my_tech_blog/categories/Database/Python/">Python</a>
         </li>
         
     </ul>
