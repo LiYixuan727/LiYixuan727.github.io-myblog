@@ -186,13 +186,27 @@
 </ul>
 <span id="more"></span>
 
-<h2 id="二叉树的类型"><a href="#二叉树的类型" class="headerlink" title="二叉树的类型"></a>二叉树的类型</h2><h4 id="满二叉树（Full-Binary-Tree）"><a href="#满二叉树（Full-Binary-Tree）" class="headerlink" title="- 满二叉树（Full Binary Tree）"></a>- 满二叉树（Full Binary Tree）</h4><h4 id="完全二叉树（Complete-Binary-Tree）"><a href="#完全二叉树（Complete-Binary-Tree）" class="headerlink" title="- 完全二叉树（Complete Binary Tree）"></a>- 完全二叉树（Complete Binary Tree）</h4><h4 id="堆（Heap）"><a href="#堆（Heap）" class="headerlink" title="- 堆（Heap）"></a>- 堆（Heap）</h4><h4 id="二叉搜索树（Binary-Search-Tree），也称为二叉查找树、有序二叉树（Ordered-Binary-Tree）或排序二叉树（Sorted-Binary-Tree），是指一棵空树或者具有下列性质的二叉树："><a href="#二叉搜索树（Binary-Search-Tree），也称为二叉查找树、有序二叉树（Ordered-Binary-Tree）或排序二叉树（Sorted-Binary-Tree），是指一棵空树或者具有下列性质的二叉树：" class="headerlink" title="- 二叉搜索树（Binary Search Tree），也称为二叉查找树、有序二叉树（Ordered Binary Tree）或排序二叉树（Sorted Binary Tree），是指一棵空树或者具有下列性质的二叉树："></a>- 二叉搜索树（Binary Search Tree），也称为二叉查找树、有序二叉树（Ordered Binary Tree）或排序二叉树（Sorted Binary Tree），是指一棵空树或者具有下列性质的二叉树：</h4><pre><code>- 若任意节点的 左子树 不为空，则左子树上所有节点的值 均小于 它的根节点的值
-- 若任意节点的 右子树 不为空，则右子树上所有节点的值 均大于或等于 它的根节点的值
-- 任意节点的左、右子树也分别为二叉搜索树
-- 没有键值相等的节点
-![](https://tsejx.github.io/data-structure-and-algorithms-guidebook/static/binary-search-tree.5d170107.png)
-</code></pre>
-<h4 id="平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于-1-的二叉树"><a href="#平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于-1-的二叉树" class="headerlink" title="- 平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于 1 的二叉树"></a>- 平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于 1 的二叉树</h4><h4 id="AVL-树"><a href="#AVL-树" class="headerlink" title="- AVL 树"></a>- AVL 树</h4><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="- 红黑树"></a>- 红黑树</h4><h3 id="preorder-inorder-postorder"><a href="#preorder-inorder-postorder" class="headerlink" title="preorder &amp; inorder &amp; postorder"></a>preorder &amp; inorder &amp; postorder</h3><p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="a binary tree"></p>
+<h2 id="二叉树的类型"><a href="#二叉树的类型" class="headerlink" title="二叉树的类型"></a>二叉树的类型</h2><ul>
+<li><h4 id="满二叉树（Full-Binary-Tree）"><a href="#满二叉树（Full-Binary-Tree）" class="headerlink" title="满二叉树（Full Binary Tree）"></a>满二叉树（Full Binary Tree）</h4></li>
+<li><h4 id="完全二叉树（Complete-Binary-Tree）"><a href="#完全二叉树（Complete-Binary-Tree）" class="headerlink" title="完全二叉树（Complete Binary Tree）"></a>完全二叉树（Complete Binary Tree）</h4><ul>
+<li><h4 id="堆（Heap）"><a href="#堆（Heap）" class="headerlink" title="堆（Heap）"></a>堆（Heap）</h4></li>
+</ul>
+</li>
+<li><h4 id="二叉搜索树（Binary-Search-Tree），也称为二叉查找树、有序二叉树（Ordered-Binary-Tree）或排序二叉树（Sorted-Binary-Tree），是指一棵空树或者具有下列性质的二叉树："><a href="#二叉搜索树（Binary-Search-Tree），也称为二叉查找树、有序二叉树（Ordered-Binary-Tree）或排序二叉树（Sorted-Binary-Tree），是指一棵空树或者具有下列性质的二叉树：" class="headerlink" title="二叉搜索树（Binary Search Tree），也称为二叉查找树、有序二叉树（Ordered Binary Tree）或排序二叉树（Sorted Binary Tree），是指一棵空树或者具有下列性质的二叉树："></a>二叉搜索树（Binary Search Tree），也称为二叉查找树、有序二叉树（Ordered Binary Tree）或排序二叉树（Sorted Binary Tree），是指一棵空树或者具有下列性质的二叉树：</h4><ul>
+<li>若任意节点的 左子树 不为空，则左子树上所有节点的值 均小于 它的根节点的值</li>
+<li>若任意节点的 右子树 不为空，则右子树上所有节点的值 均大于或等于 它的根节点的值</li>
+<li>任意节点的左、右子树也分别为二叉搜索树</li>
+<li>没有键值相等的节点</li>
+</ul>
+<p>  <img src="https://tsejx.github.io/data-structure-and-algorithms-guidebook/static/binary-search-tree.5d170107.png" alt="二叉搜索树"></p>
+</li>
+<li><h4 id="平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于-1-的二叉树"><a href="#平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于-1-的二叉树" class="headerlink" title="平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于 1 的二叉树"></a>平衡二叉树：当且仅当任何节点的两棵子树的高度差不大于 1 的二叉树</h4><ul>
+<li><h4 id="AVL-树"><a href="#AVL-树" class="headerlink" title="AVL 树"></a>AVL 树</h4></li>
+<li><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4></li>
+</ul>
+</li>
+</ul>
+<h3 id="preorder-inorder-postorder"><a href="#preorder-inorder-postorder" class="headerlink" title="preorder &amp; inorder &amp; postorder"></a>preorder &amp; inorder &amp; postorder</h3><p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="a binary tree"></p>
 <ul>
 <li>preorder &#x3D; [3,9,20,15,7]</li>
 <li>inorder &#x3D; [9,3,15,20,7]</li>
@@ -247,11 +261,11 @@ I’m a NLP PhD of Sorbonne Nouvelle University. I live in Paris and I finished 
         </li>
         
         <li>
-            <a class="footer-post" href="/my_tech_blog/categories/Kaggle/">Kaggle</a>
+            <a class="footer-post" href="/my_tech_blog/categories/Algorithm/">Algorithm</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/my_tech_blog/categories/Algorithm/">Algorithm</a>
+            <a class="footer-post" href="/my_tech_blog/categories/Kaggle/">Kaggle</a>
         </li>
         
         <li>
