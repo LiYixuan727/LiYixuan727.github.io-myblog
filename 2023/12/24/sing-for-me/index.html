@@ -218,8 +218,10 @@
 <p>可以接受的格式包括 mp3, mp4 等等.</p>
 <h4 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install dependencies using conda</span></span><br><span class="line">conda install -c conda-forge ffmpeg libsndfile</span><br><span class="line"><span class="comment"># install spleeter with pip</span></span><br><span class="line">pip install spleeter</span><br><span class="line"><span class="comment"># download an example audio file (if you don&#x27;t have wget, use another tool for downloading)</span></span><br><span class="line">wget https://github.com/deezer/spleeter/raw/master/audio_example.mp3</span><br><span class="line"><span class="comment"># separate the example audio into two components</span></span><br><span class="line">spleeter separate -p spleeter:2stems -o output audio_example.mp3</span><br></pre></td></tr></table></figure>
 
-
-<p>用起来倒是很快, 也很便捷, 但出来的效果只能说一般, 人声part各处模糊不清 (换首歌不知道会不会好一点😠)</p>
+<p>用起来倒是很快, 也很便捷, 但出来的效果只能说一般, 人声part各处模糊不清 (换了几首歌都差不多😠)</p>
+<blockquote>
+<p>另记一个在线声音伴奏分离的网站: <a target="_blank" rel="noopener" href="https://vocalremover.org/zh/">Vocal Remover</a><br>效果不错, 但有限额..</p>
+</blockquote>
 <h3 id="二、预处理原声音频"><a href="#二、预处理原声音频" class="headerlink" title="二、预处理原声音频"></a>二、预处理原声音频</h3><p><strong>以下都复制自原项目 ducumentation:</strong></p>
 <h4 id="0-音频切片"><a href="#0-音频切片" class="headerlink" title="0. 音频切片"></a>0. 音频切片</h4><p>将音频切片至5s - 15s, 稍微长点也无伤大雅，实在太长可能会导致训练中途甚至预处理就爆显存。</p>
 <p>可以使用<code>audio-slicer-GUI</code>、<code>audio-slicer-CLI</code></p>
