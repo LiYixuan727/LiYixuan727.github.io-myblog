@@ -347,7 +347,7 @@
 </tr>
 <tr>
 <td>あんさんぶるスターズ！！</td>
-<td>2020年3月15日 (2015年4月28日)</td>
+<td>2015年4月28日 (2020年3月15日)</td>
 <td>✅</td>
 <td>✅</td>
 <td>✅</td>
@@ -399,7 +399,7 @@
 <td>❓</td>
 <td>✅</td>
 <td>❓</td>
-<td>-</td>
+<td>一般向</td>
 </tr>
 </tbody></table>
 <br/>
@@ -428,7 +428,9 @@
 
 <br/>
 
-<h4 id="Step-4-使用-pynimate-将时序数据动态可视化"><a href="#Step-4-使用-pynimate-将时序数据动态可视化" class="headerlink" title="Step 4: 使用 pynimate 将时序数据动态可视化"></a>Step 4: 使用 <code>pynimate</code> 将时序数据动态可视化</h4><br/>
+<h4 id="Step-4-使用-pynimate-将时序数据动态可视化"><a href="#Step-4-使用-pynimate-将时序数据动态可视化" class="headerlink" title="Step 4: 使用 pynimate 将时序数据动态可视化"></a>Step 4: 使用 <code>pynimate</code> 将时序数据动态可视化</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pynimate <span class="keyword">as</span> nim</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;time&quot;</span>: [<span class="string">&quot;1960-01-01&quot;</span>, <span class="string">&quot;1961-01-01&quot;</span>, <span class="string">&quot;1962-01-01&quot;</span>],</span><br><span class="line">        <span class="string">&quot;Afghanistan&quot;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">        <span class="string">&quot;Angola&quot;</span>: [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">        <span class="string">&quot;Albania&quot;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>],</span><br><span class="line">        <span class="string">&quot;USA&quot;</span>: [<span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">        <span class="string">&quot;Argentina&quot;</span>: [<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">    &#125;</span><br><span class="line">).set_index(<span class="string">&quot;time&quot;</span>)</span><br><span class="line"></span><br><span class="line">cnv = nim.Canvas()</span><br><span class="line">bar = nim.Barhplot.from_df(df, <span class="string">&quot;%Y-%m-%d&quot;</span>, <span class="string">&quot;2d&quot;</span>)</span><br><span class="line">bar.set_time(callback=<span class="keyword">lambda</span> i, datafier: datafier.data.index[i].year)</span><br><span class="line">cnv.add_plot(bar)</span><br><span class="line">cnv.animate()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<br/>
 
 
 <h3 id="三、官方推特数据"><a href="#三、官方推特数据" class="headerlink" title="三、官方推特数据"></a>三、官方推特数据</h3><br/>
@@ -479,6 +481,15 @@
 <li>Pixiv</li>
 <li>骏河屋</li>
 </ul>
+<br/>
+
+<h1 id="趋势分析"><a href="#趋势分析" class="headerlink" title="趋势分析"></a>趋势分析</h1><br/>
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>Data Analysis</category>
