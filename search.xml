@@ -115,7 +115,7 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="方法-文本二分类集成学习"><a href="#方法-文本二分类集成学习" class="headerlink" title="方法: 文本二分类集成学习"></a>方法: 文本二分类集成学习</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 集成学习分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> VotingClassifier</span><br><span class="line"><span class="comment"># 多项式朴素贝叶斯</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDClassifier</span><br><span class="line"><span class="comment"># 随机梯度下降分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> MultinomialNB</span><br><span class="line"><span class="comment"># LightGBM </span></span><br><span class="line"><span class="keyword">from</span> lightgbm <span class="keyword">import</span> LGBMClassifier</span><br><span class="line"><span class="comment"># CatBoost</span></span><br><span class="line"><span class="keyword">from</span> catboost <span class="keyword">import</span> CatBoostClassifier</span><br></pre></td></tr></table></figure>
+<h2 id="方法①-文本二分类集成学习"><a href="#方法①-文本二分类集成学习" class="headerlink" title="方法① : 文本二分类集成学习"></a>方法① : 文本二分类集成学习</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 集成学习分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> VotingClassifier</span><br><span class="line"><span class="comment"># 多项式朴素贝叶斯</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDClassifier</span><br><span class="line"><span class="comment"># 随机梯度下降分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> MultinomialNB</span><br><span class="line"><span class="comment"># LightGBM </span></span><br><span class="line"><span class="keyword">from</span> lightgbm <span class="keyword">import</span> LGBMClassifier</span><br><span class="line"><span class="comment"># CatBoost</span></span><br><span class="line"><span class="keyword">from</span> catboost <span class="keyword">import</span> CatBoostClassifier</span><br></pre></td></tr></table></figure>
 
 <h4 id="1-多项式朴素贝叶斯-MultinomialNB"><a href="#1-多项式朴素贝叶斯-MultinomialNB" class="headerlink" title="1. 多项式朴素贝叶斯 (MultinomialNB)"></a>1. 多项式朴素贝叶斯 (MultinomialNB)</h4><ul>
 <li>多项式朴素贝叶斯是朴素贝叶斯算法的一种，特别适用于具有离散特征（如文本分类中的单词计数）的分类问题。它基于贝叶斯定理，假设所有特征之间相互独立（这是一个“朴素”的假设，因此得名）。</li>
@@ -134,7 +134,7 @@
 <li>CatBoost 是由 Yandex 开发的一个开源机器学习库，也是基于梯度提升的。它特别适合处理具有分类特征的数据集，并且无需进行大量的数据预处理。CatBoost在减少过拟合方面表现优异，即使在默认参数设置下也能提供强大的性能。</li>
 <li>它提供了详尽的文档和易于使用的 API，适用于广泛的分类任务。</li>
 </ul>
-]]></content>
+<h2 id="方法②"><a href="#方法②" class="headerlink" title="方法② :"></a>方法② :</h2><h2 id="方法③"><a href="#方法③" class="headerlink" title="方法③ :"></a>方法③ :</h2>]]></content>
       <categories>
         <category>Kaggle</category>
         <category>LLM</category>
@@ -323,6 +323,79 @@
 <span id="more"></span>
 
 <br/>
+
+<h2 id="竞品手游APP对比"><a href="#竞品手游APP对比" class="headerlink" title="竞品手游APP对比"></a>竞品手游APP对比</h2><br/>
+
+<table>
+<thead>
+<tr>
+<th>游戏</th>
+<th>抽卡</th>
+<th>音游</th>
+<th>MV</th>
+<th>受众</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>あんさんぶるスターズ！！</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>女性向</td>
+</tr>
+<tr>
+<td>Project SEKAI COLORFUL STAGE!</td>
+<td>❓</td>
+<td>✅</td>
+<td>❓</td>
+<td>-</td>
+</tr>
+<tr>
+<td>うたの☆プリンスさまっ♪ Shining Live</td>
+<td>✅</td>
+<td>✅</td>
+<td>❇️</td>
+<td>女性向 (乙女向)</td>
+</tr>
+<tr>
+<td>IDOLiSH7</td>
+<td>❓</td>
+<td>✅</td>
+<td>❓</td>
+<td>女性向</td>
+</tr>
+<tr>
+<td>THE iDOLM@STER SideM</td>
+<td>❓</td>
+<td>✅</td>
+<td>❓</td>
+<td>女性向</td>
+</tr>
+<tr>
+<td>A3!</td>
+<td>❓</td>
+<td>❓</td>
+<td>❓</td>
+<td>女性向</td>
+</tr>
+<tr>
+<td>ヒプノシスマイク -Division Rap Battle-</td>
+<td>❓</td>
+<td>✅</td>
+<td>❎</td>
+<td>女性向</td>
+</tr>
+<tr>
+<td>Disney Twisted-Wonderland</td>
+<td>❓</td>
+<td>❓</td>
+<td>❓</td>
+<td>女性向</td>
+</tr>
+</tbody></table>
+<br/>
+
+<h2 id="游戏数据分析"><a href="#游戏数据分析" class="headerlink" title="游戏数据分析"></a>游戏数据分析</h2><br/>
 
 <h3 id="一、APP流水-App下载量"><a href="#一、APP流水-App下载量" class="headerlink" title="一、APP流水 &amp; App下载量"></a>一、APP流水 &amp; App下载量</h3><p>💰 <a href="https://game-i.daa.jp/?APP/1494428618#bbs">セルラン分析&#x2F;ゲーム株『Game-i』</a></p>
 <br/>
